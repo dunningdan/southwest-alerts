@@ -62,7 +62,7 @@ def check_for_price_drops(username, password, email):
                     data={'from': 'Southwest Alerts <southwest-alerts@{}>'.format(settings.mailgun_domain),
                           'to': [email],
                           'subject': 'Southwest Price Drop Alert',
-                          'text': message})
+                          'text': message}, timeout=60)
                 assert resp.status_code == 200
 
 
